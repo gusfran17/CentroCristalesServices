@@ -1,0 +1,44 @@
+{# Base Twig template #}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <head profile="http://www.w3.org/2005/10/profile">
+
+        <link href="{{ asset('bundles/lcsapp/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('bundles/lcsapp/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">
+        {% block stylesheets %}{% endblock %}
+
+        {% block head %}{% endblock %}
+
+    </head>
+    <body>
+
+        <div class="container-fluid">
+            {% block body %}{% endblock %}
+        </div>
+
+        {% javascripts
+            '@base_scripts' %}
+            <script src="{{ asset_url }}"></script>
+            <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+            <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+
+            <script>
+                $(function(){
+                    moment.locale('es');
+                });
+            </script>
+
+
+        {% endjavascripts %}
+
+        {# PARA INCLUIR SCRIPTS EN ESTE BLOQUE, LOS SCRIPT DEBEN ESTAR BIEN FORMADOS E INICIALIZARSE EN EL DOCUMENT READY#}
+        {% block javascripts %}{% endblock %}
+
+    </body>
+</html>
+

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="centrocristales-turnos" default="build">
+    <property name="workspace" value="${basedir}"/>
+    <property name="sourcedir" value="${basedir}/src"/>
+    <property name="builddir" value="${workspace}/app/build"/>
+
+    <target name="build"
+            depends="vendors,clean-up,assetics-dump,assetics-dump-dev"/>
+
+    <target name="vendors" description="Install vendors">
+        <exec executable="composer" failonerror="true">
+            <arg value="install"/>
+            <arg value="--no-dev"/>
+            <arg value="--optimize-autoloader"/>
+            <arg value="--prefer-dist"/>
+            <arg value="--ignore-platform-reqs"/>
+        </exec>
+    </target>
+
+    <target name="clean-up" description="Cleanup post build. Prepare for deploy">
+        <delete dir="app/logs/*"/>
+        <delete dir="app/cache/*"/>
+    </target>
+
+    <target name="assetics-dump" description="Assetic Dump Prod">
+        <exec executable="php" failonerror="true">
+            <arg value="app/console"/>
+            <arg value="assetic:dump"/>
+            <arg value="--env=prod"/>
+            <arg value="--no-debug"/>
+        </exec>
+    </target>
+
+    <target name="assetics-dump-dev" description="Assetic Dump Dev">
+        <exec executable="php" failonerror="true">
+            <arg value="app/console"/>
+            <arg value="assetic:dump"/>
+        </exec>
+    </target>
+
+</project>

@@ -1,0 +1,31 @@
+{% extends '::base.html.twig' %}
+
+{%  block body %}
+    <div id="main-container">
+
+        {% if message is defined %}
+            {{ include("@LCSApp/Template/Message/success.html.twig", {message:message}, false) }}
+        {% endif %}
+
+        {{ form_errors(form) }}
+        <form id="form" action="{{ path('lcs_app.default.consultaotsend') }}" method="post" class="form-horizontal" novalidate>
+
+            {{ form_rest(form) }}
+
+        </form>
+    </div>
+
+{%  endblock body %}
+
+{% block javascripts %}
+
+    {% javascripts
+    '@LCSAppBundle/Resources/public/js/default/consulta-ot.js'%}
+
+    <script src="{{ asset_url }}"></script>
+
+    {% endjavascripts %}
+
+{% endblock %}
+
+

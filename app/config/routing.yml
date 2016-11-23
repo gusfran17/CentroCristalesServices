@@ -1,0 +1,15 @@
+lcs_servicio:
+    resource: "@LCSServicioBundle/Resources/config/routing.yml"
+    prefix:   /
+
+lcs_web_service:
+    resource: "@LCSWebServiceBundle/Controller/"
+    type:     annotation
+    prefix:   /ws
+
+lcs_app:
+    resource: "@LCSAppBundle/Controller/"
+    type:     annotation
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"

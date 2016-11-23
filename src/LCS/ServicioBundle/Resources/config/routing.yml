@@ -1,0 +1,3 @@
+#lcs_servicio_homepage:
+#    path:     /hello/{name}
+#    defaults: { _controller: LCSServicioBundle:Default:index }

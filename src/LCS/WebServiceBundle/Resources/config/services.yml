@@ -1,0 +1,4 @@
+services:
+    lcs_webservice.service.pedidopresupuesto:
+        class: LCS\WebServiceBundle\Service\PedidoPresupuestoService
+        arguments: ['@mailer', '@templating', '%mailer_sender%', '%mailer_pedido_presupuesto_address%', '%mailer_attachments_dir%']

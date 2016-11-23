@@ -1,0 +1,10 @@
+services:
+    lcs_app.clients.service1:
+        class: LCS\AppBundle\Services\Clients\Service1
+        arguments: ['%lcs_app.service1.wsdl%', '%lcs_app.service1.endpoint%']
+
+#FORM EXTENSIONS
+    lcs_app.type.image:
+            class: LCS\AppBundle\Form\Type\ImageType
+            tags:
+                - { name: form.type, alias: image }

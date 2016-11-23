@@ -1,0 +1,23 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: symfony
+    database_user: root
+    database_password: null
+    mailer_transport: smtp
+    mailer_host: centrocristales.dynns.com
+    mailer_user: consultasapp@centrocristales.com
+    mailer_password: 123cc321
+    mailer_port: 2525
+    mailer_encryptation: null
+    mailer_sender:
+        consultasapp@centrocristales.com: 'Consultas Centro Cristales'
+    mailer_pedido_presupuesto_address: consultasapp@centrocristales.com
+    mailer_attachments_dir: '%kernel.cache_dir%/attachments/'
+    secret: b9922ab2f02273306d852df389317709e8ff6c93
+    app_version: v2.0
+    lcs_app.service1.wsdl: 'http://centrocristales.dynns.com:8094/wscrm/service1.asmx?WSDL'
+    lcs_app.service1.endpoint: 'http://centrocristales.dynns.com:8094/wscrm/service1.asmx?WSDL'
+    lcs_app.service1.dateformat: 'd/m/Y h:i:s a'
+    lcs_app.ws_crm_rest.base_url: 'http://centrocristales.dynns.com:8094/WSCRMREST/WarnesWSRest.svc/'

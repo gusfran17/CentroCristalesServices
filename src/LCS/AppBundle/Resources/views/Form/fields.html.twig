@@ -1,0 +1,220 @@
+{% block form_widget_simple %}
+    {% spaceless %}
+        {% set type = type|default('text') %}
+        {% set attr = attr|merge({'class': (attr.class|default('') ~ ' form-control')|trim}) %}
+        <div class="col-sm-10">
+            <input type="{{ type }}" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}/>
+            {% if attr['helper-text'] is defined %}
+                <em>{{attr['helper-text']|raw}}</em>
+            {% endif %}
+        </div>
+    {% endspaceless %}
+{% endblock form_widget_simple %}
+
+{% block hidden_widget %}
+    {% spaceless %}
+        {% set type = type|default('hidden') %}
+        {% set attr = attr|merge({'class': (attr.class|default('') ~ ' form-control')|trim}) %}
+        <input type="{{ type }}" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}/>
+    {% endspaceless %}
+{% endblock hidden_widget %}
+
+{% block textarea_widget %}
+    {% spaceless %}
+        <div class="col-sm-10">
+            <textarea rows="3" class="form-control" {{ block('widget_attributes') }}>{{ value }}</textarea>
+        </div>
+    {% endspaceless %}
+{% endblock textarea_widget %}
+
+{% block checkbox_label %}<label class="col-sm-2 control-label"></label>{% endblock %}
+{% block checkbox_widget %}
+    {% spaceless %}
+        <div class="col-sm-10">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />{{ label|trans({}, translation_domain) }}
+                </label>
+            </div>
+        </div>
+    {% endspaceless %}
+{% endblock checkbox_widget %}
+
+{% block choice_widget_collapsed %}
+    {% spaceless %}
+        {% if required and empty_value is none and not empty_value_in_choices and not multiple %}
+            {% set required = false %}
+        {% endif %}
+
+        {% if 'select2' not in attr.class|default('') %}
+            {% set extraClasses = ' form-control'%}
+        {% endif %}
+
+        {% set attr = attr|merge({'class': (attr.class|default('') ~ extraClasses|default(''))|trim}) %}
+        <div class="col-sm-10">
+            <select {{ block('widget_attributes') }}{% if multiple %} multiple="multiple"{% endif %}>
+                {% if empty_value is not none %}
+                    <option value=""{% if required and value is empty %} selected="selected"{% endif %}>{{ empty_value|trans({}, translation_domain) }}</option>
+                {% endif %}
+                {% if preferred_choices|length > 0 %}
+                    {% set options = preferred_choices %}
+                    {{ block('choice_widget_options') }}
+                    {% if choices|length > 0 and separator is not none %}
+                        <option disabled="disabled">{{ separator }}</option>
+                    {% endif %}
+                {% endif %}
+                {% set options = choices %}
+                {{ block('choice_widget_options') }}
+            </select>
+        </div>
+    {% endspaceless %}
+{% endblock choice_widget_collapsed %}
+
+{% block form_row %}
+    {% spaceless %}
+        <div class="form-group">
+            {{ form_label(form) }}
+            {{ form_errors(form) }}
+            {{ form_widget(form) }}
+        </div>
+    {% endspaceless %}
+{% endblock form_row %}
+
+{% block submit_row %}
+    {% spaceless %}
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                {{ form_widget(form) }}
+            </div>
+        </div>
+    {% endspaceless %}
+{% endblock submit_row %}
+
+{% block form_label %}
+{% spaceless %}
+    {% if label is not sameas(false) %}
+        {% if not compound %}
+    {% set label_attr = label_attr|merge({'for': id}) %}
+{% endif %}
+        {% if required %}
+    {% set label_attr = label_attr|merge({'class': (label_attr.class|default('') ~ ' required')|trim}) %}
+{% endif %}
+        {% if label is empty %}
+    {% set label = name|humanize %}
+{% endif %}
+        {% set label_attr = label_attr|merge({'class': (label_attr.class|default('') ~ ' col-sm-2 control-label')|trim}) %}
+
+        <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>{{ label|trans({}, translation_domain) }}</label>
+    {% endif %}
+{% endspaceless %}
+{% endblock form_label %}
+
+{% block form_start %}
+{% spaceless %}
+    {% set method = method|upper %}
+    {% if method in ["GET", "POST"] %}
+    {% set form_method = method %}
+{% else %}
+    {% set form_method = "POST" %}
+{% endif %}
+    {% set attr = attr|merge({'class': (attr.class|default('') ~ ' form-horizontal')|trim}) %}
+    {% set attr = attr|merge({'role': (attr.role|default('') ~ ' form')|trim}) %}
+    <form name="{{ form.vars.name }}" method="{{ form_method|lower }}" action="{{ action }}"{% for attrname, attrvalue in attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}{% if multipart %} enctype="multipart/form-data"{% endif %}>
+        {% if form_method != method %}
+    <input type="hidden" name="_method" value="{{ method }}" />
+{% endif %}
+{% endspaceless %}
+{% endblock form_start %}
+
+{% block form_end %}
+{% spaceless %}
+        {% if not render_rest is defined or render_rest %}
+    {{ form_rest(form) }}
+{% endif %}
+    </form>
+{% endspaceless %}
+{% endblock form_end %}
+
+{% block date_widget %}
+    {% set showTimePicker = false%}
+    {{ block('datetime_control') }}
+{% endblock date_widget %}
+
+{% block datetime_widget %}
+    {% set showTimePicker = true%}
+    {{ block('datetime_control') }}
+{% endblock datetime_widget %}
+
+{% block datetime_control %}
+    {% spaceless %}
+        {% if widget == 'single_text' %}
+
+            {% set valueExpression = '' %}
+            {% if showTimePicker %}
+                {% set idClass = 'datetimepicker-control' %}
+                {% set formatExpression = 'DD-MM-YYYY HH:mm' %}
+                {% if value %}
+                    {% set valueExpression = value|date('d-m-Y H:i') %}
+                {% endif %}
+            {% else %}
+                {% set idClass = 'datepicker-control' %}
+                {% set formatExpression = 'DD-MM-YYYY' %}
+                {% if value %}
+                    {% set valueExpression = value|date('d-m-Y') %}
+                {% endif %}
+            {% endif %}
+
+            {% if class is not defined %}
+                {% set attr = attr|merge({'class': (attr.class|default('') ~ ' form-control ' ~ idClass)|trim}) %}
+            {% endif %}
+
+            {#http://www.eyecon.ro/bootstrap-datepicker/#}
+
+            <div class="col-sm-10">
+                <div class='input-group datepicker-control' id='div-{{id}}' style="max-width: 150px;">
+                    <input type='text' class="form-control" data-format="{{formatExpression}}" value="{{valueExpression}}" {{ block('widget_attributes') }}/>
+                <span class="input-group-addon">
+                    <span class="icon ion-ios7-calendar-outline"></span>
+                </span>
+                </div>
+            </div>
+
+        {% endif %}
+    {% endspaceless %}
+{% endblock datetime_control %}
+
+{% block submit_widget %}
+    {% spaceless %}
+        {% set type = type|default('submit') %}
+        {% set attr = attr|merge({'class': (attr.class|default('') ~ ' btn btn-default')|trim}) %}
+        {{ block('button_widget') }}
+    {% endspaceless %}
+{% endblock submit_widget %}
+
+{%- block form_errors -%}
+    {%- if errors|length > 0 -%}
+        {%- for error in errors -%}
+            <div class="alert alert-danger alert-icon">
+                <div class="icon"><i class="icon ion-ios7-close-empty"></i></div>
+                {{ error.message }}
+            </div>
+        {%- endfor -%}
+    {%- endif -%}
+{%- endblock form_errors -%}
+
+
+{% block image_widget %}
+
+    <div class="col-sm-10">
+        <div class="fileinput fileinput-new" data-provides="fileinput">
+            <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;cursor: pointer"></div>
+            <div>
+                <span class="btn btn-default btn-file"><span class="fileinput-new">Seleccionar...</span>
+                <span class="fileinput-exists">Cambiar...</span>
+                <input type="file" name="{{full_name}}" accept="image/*" {{ block('widget_attributes') }} class="jasny-input-file"></span>
+            </div>
+        </div>
+    </div>
+
+{% endblock  %}
+

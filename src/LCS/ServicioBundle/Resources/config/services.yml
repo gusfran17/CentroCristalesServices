@@ -1,0 +1,7 @@
+services:
+    lcs_servicio.service.pedidopresupuesto:
+        class: LCS\ServicioBundle\Service\PedidoPresupuestoService
+        arguments: ['@mailer', '@templating', '%mailer_sender%', '%mailer_pedido_presupuesto_address%', '%mailer_attachments_dir%']
+    lcs_servicio.service.consultaordentrabajo:
+        class: LCS\ServicioBundle\Service\ConsultaOrdenTrabajoService
+        arguments: ['@guzzle.client.ws_crm_rest']

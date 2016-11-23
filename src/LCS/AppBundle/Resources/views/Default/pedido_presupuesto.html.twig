@@ -1,0 +1,45 @@
+{% extends '::base.html.twig' %}
+
+{%  block body %}
+    <div id="main-container">
+
+        {% if message is defined %}
+            {{ include("@LCSApp/Template/Message/success.html.twig", {message:message}, false) }}
+        {% endif %}
+
+        {{ form_errors(form) }}
+        <form id="form" action="{{ path('lcs_app.default.pedidopresupuestosend') }}" method="post" enctype="multipart/form-data" class="form-horizontal" novalidate>
+
+            {{ form_rest(form) }}
+
+        </form>
+    </div>
+
+    <style>
+        div.fileinput-preview.thumbnail
+        {
+            cursor: pointer;
+        }
+    </style>
+
+{%  endblock body %}
+
+{% block stylesheets %}
+
+    <link href="{{ asset('bundles/lcsapp/jasny-bootstrap/css/jasny-bootstrap.min.css') }}" rel="stylesheet">
+
+{% endblock %}
+
+{% block javascripts %}
+
+    {% javascripts
+    '@LCSAppBundle/Resources/public/js/default/pedido-presupuesto.js'
+    '@LCSAppBundle/Resources/public/jasny-bootstrap/js/jasny-bootstrap.min.js'%}
+
+    <script src="{{ asset_url }}"></script>
+
+    {% endjavascripts %}
+
+{% endblock %}
+
+

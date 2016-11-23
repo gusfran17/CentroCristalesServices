@@ -1,0 +1,42 @@
+parameters:
+    lcs_app.companias:
+        254: ALLIANZ AREGENTINA SEGUROS
+        15725: AMCA
+        256: ARGOS CIA. DE SEGUROS
+        31456: ASEGURADORA FEDERAL
+        278: BERKLEY SEGUROS S.A.
+        272: BOSTON SEGUROS
+        48412: CALEDONIA ARGENTINA COMPAÑIA DE SEGUROS S.A
+        4673: CHUBB ARGENTINA DE SEGUROS
+        5818: CIA DE SEG.EL NORTE S.A.
+        3046: EL PROGRESO SEGUROS S.A.
+        238: ESCUDO SEGUROS S.A.
+        273: FEDERACION PATRONAL LTDA.
+        39335: GENERALI ARGENTINA COMPAÑIA DE SEGUROS SA
+        35743: HDI SEGUROS
+        282: INTEGRITY
+        43505: LA CAJA CIA. DE SEGUROS
+        4280: LA EQUITATIVA DEL PLATA S.A DE SEGUROS
+        284: LA HOLANDO SUD. COMP. DE SEG. S.A.
+        44169: LA NUEVA SOC.COOP.DE SEG.
+        39542: LA PERSEVERANCIA SEGUROS S.A.
+        243: LA SEGUNDA C.L.S.G.
+        38040: MAPFRE ACONCAGUA CIA.SEG.
+        250: MERCANTIL ANDINA
+        248: MERIDIONAL SEGUROS
+        595: NACION SEGUROS
+        260: ORBIS CIA DE SEGUROS S.A.
+        281: PARANA S.A. DE SEGUROS
+        277: PROVINCIA SEGUROS
+        259: PRUDENCIA CIA. DE SEGUROS
+        253: QBE SEGUROS LA BUENOS AIRES S.A..
+        263: RIO URUGUAY COOP.DE SEG.Ltda
+        271: ROYAL & SUNALLIANCE - Answer
+        262: SAN CRISTOBAL SOC. MUTUAL
+        276: SANCOR COOP.DE SEG.LTDA.
+        59869: SEGURCOOP
+        542: SMG SEGUROS S.A.
+    lcs_app.mensajes.estado_ot:
+        NOENCONTRADA: "No se encontró la Orden de Trabajo. Por favor verifique el número de Orden de Trabajo y Dominio y vuelva a intentarlo"
+        ENT: "Su vehículo se encuentra en TALLER"
+        PAS: "Su vehículo se encuentra TERMINADO"
