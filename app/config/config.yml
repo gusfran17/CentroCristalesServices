@@ -72,26 +72,36 @@ assetic:
 
 
 ## Doctrine Configuration
-#doctrine:
-#    dbal:
-#        driver:   pdo_mysql
-#        host:     "%database_host%"
-#        port:     "%database_port%"
-#        dbname:   "%database_name%"
-#        user:     "%database_user%"
-#        password: "%database_password%"
-#        charset:  UTF8
-#        # if using pdo_sqlite as your database driver:
-#        #   1. add the path in parameters.yml
-#        #     e.g. database_path: "%kernel.root_dir%/data/data.db3"
-#        #   2. Uncomment database_path in parameters.yml.dist
-#        #   3. Uncomment next line:
-#        #     path:     "%database_path%"
-#
-#    orm:
-#        auto_generate_proxy_classes: "%kernel.debug%"
-#        naming_strategy: doctrine.orm.naming_strategy.underscore
-#        auto_mapping: true
+doctrine:
+    dbal:
+        driver:   pdo_mysql
+        host:     "%database_host%"
+        port:     "%database_port%"
+        dbname:   "%database_name%"
+        user:     "%database_user%"
+        password: "%database_password%"
+        charset:  utf8mb4
+        default_table_options:
+            charset: utf8mb4
+            collate: utf8mb4_unicode_ci
+        # if using pdo_sqlite as your database driver:
+        #   1. add the path in parameters.yml
+        #     e.g. database_path: "%kernel.root_dir%/data/data.db3"
+        #   2. Uncomment database_path in parameters.yml.dist
+        #   3. Uncomment next line:
+        #     path:     "%database_path%"
+
+    orm:
+        auto_generate_proxy_classes: "%kernel.debug%"
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+        auto_mapping: true
+        mappings:
+            LCSAppBundle:
+                type: annotation
+                is_bundle: false
+                dir: %kernel.root_dir%/../src/LCS/AppBundle/Entity/
+                prefix: LCS\AppBundle\Entity
+                alias: LCSAppBundle
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -101,9 +111,9 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     encryption: "%mailer_encryptation%"
-#    spool:
-#        type: file
-#        path: '%kernel.root_dir%/spool'
+    spool:
+        type: file
+        path: '%kernel.root_dir%/spool'
 
 guzzle:
     clients:
@@ -117,14 +127,14 @@ guzzle:
             # guzzle client options (full description here: http://guzzle.readthedocs.org/en/latest/request-options.html)
             # NOTE: "headers" option is not accepted here as it is provided as described above.
             options:
-#                auth:
-#                    - acme     # login
-#                    - pa55w0rd # password
+                auth:
+                    - acme     # login
+                    - pa55w0rd # password
                 timeout: 30
 
             # plugin settings
-#            plugin:
-#                wsse:
-#                    username:   "acme"
-#                    password:   "pa55w0rd"
-#                    created_at: "-10 seconds" # optional
+            plugin:
+                wsse:
+                    username:   "acme"
+                    password:   "pa55w0rd"
+                    #created_at: "-10 seconds" # optional
