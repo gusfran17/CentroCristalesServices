@@ -2,10 +2,10 @@
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
     <parameter key="kernel.root_dir">C:\xampp\htdocs\turnos-app\app</parameter>
-    <parameter key="kernel.environment">dev</parameter>
+    <parameter key="kernel.environment">test</parameter>
     <parameter key="kernel.debug">true</parameter>
     <parameter key="kernel.name">app</parameter>
-    <parameter key="kernel.cache_dir">C:\xampp\htdocs\turnos-app\app\cache\dev</parameter>
+    <parameter key="kernel.cache_dir">C:\xampp\htdocs\turnos-app\app\cache\test</parameter>
     <parameter key="kernel.logs_dir">C:\xampp\htdocs\turnos-app\app\logs</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
@@ -28,7 +28,7 @@
       <parameter key="LCSAppBundle">LCS\AppBundle\LCSAppBundle</parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
-    <parameter key="kernel.container_class">appDevDebugProjectContainer</parameter>
+    <parameter key="kernel.container_class">appTestDebugProjectContainer</parameter>
     <parameter key="database_host">localhost</parameter>
     <parameter key="database_port">3307</parameter>
     <parameter key="database_name">centrocr_app</parameter>
@@ -44,7 +44,7 @@
       <parameter key="consultasapp@centrocristales.com">Consultas Centro Cristales</parameter>
     </parameter>
     <parameter key="mailer_pedido_presupuesto_address">consultasapp@centrocristales.com</parameter>
-    <parameter key="mailer_attachments_dir">C:\xampp\htdocs\turnos-app\app\cache\dev/attachments/</parameter>
+    <parameter key="mailer_attachments_dir">C:\xampp\htdocs\turnos-app\app\cache\test/attachments/</parameter>
     <parameter key="secret">b9922ab2f02273306d852df389317709e8ff6c93</parameter>
     <parameter key="app_version">v2.0</parameter>
     <parameter key="lcs_app.service1.wsdl">http://centrocristales.dynns.com:8094/wscrm/service1.asmx?WSDL</parameter>
@@ -148,6 +148,11 @@
     <parameter key="kernel.trusted_hosts" type="collection"/>
     <parameter key="kernel.trusted_proxies" type="collection"/>
     <parameter key="kernel.default_locale">en</parameter>
+    <parameter key="test.client.class">Symfony\Bundle\FrameworkBundle\Client</parameter>
+    <parameter key="test.client.parameters" type="collection"/>
+    <parameter key="test.client.history.class">Symfony\Component\BrowserKit\History</parameter>
+    <parameter key="test.client.cookiejar.class">Symfony\Component\BrowserKit\CookieJar</parameter>
+    <parameter key="test.session.listener.class">Symfony\Bundle\FrameworkBundle\EventListener\TestSessionListener</parameter>
     <parameter key="session.class">Symfony\Component\HttpFoundation\Session\Session</parameter>
     <parameter key="session.flashbag.class">Symfony\Component\HttpFoundation\Session\Flash\FlashBag</parameter>
     <parameter key="session.attribute_bag.class">Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag</parameter>
@@ -162,7 +167,7 @@
     <parameter key="session.storage.options" type="collection">
       <parameter key="gc_probability">1</parameter>
     </parameter>
-    <parameter key="session.save_path">C:\xampp\htdocs\turnos-app\app\cache\dev/sessions</parameter>
+    <parameter key="session.save_path">C:\xampp\htdocs\turnos-app\app\cache\test/sessions</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="security.secure_random.class">Symfony\Component\Security\Core\Util\SecureRandom</parameter>
     <parameter key="form.resolved_type_factory.class">Symfony\Component\Form\ResolvedFormTypeFactory</parameter>
@@ -219,7 +224,7 @@
     <parameter key="data_collector.form.extractor.class">Symfony\Component\Form\Extension\DataCollector\FormDataExtractor</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_master_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:C:\xampp\htdocs\turnos-app\app\cache\dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:C:\xampp\htdocs\turnos-app\app\cache\test/profiler</parameter>
     <parameter key="profiler.storage.username"></parameter>
     <parameter key="profiler.storage.password"></parameter>
     <parameter key="profiler.storage.lifetime">86400</parameter>
@@ -237,14 +242,14 @@
     <parameter key="router.options.matcher_base_class">Symfony\Bundle\FrameworkBundle\Routing\RedirectableUrlMatcher</parameter>
     <parameter key="router.options.matcher_dumper_class">Symfony\Component\Routing\Matcher\Dumper\PhpMatcherDumper</parameter>
     <parameter key="router.cache_warmer.class">Symfony\Bundle\FrameworkBundle\CacheWarmer\RouterCacheWarmer</parameter>
-    <parameter key="router.options.matcher.cache_class">appDevUrlMatcher</parameter>
-    <parameter key="router.options.generator.cache_class">appDevUrlGenerator</parameter>
+    <parameter key="router.options.matcher.cache_class">appTestUrlMatcher</parameter>
+    <parameter key="router.options.generator.cache_class">appTestUrlGenerator</parameter>
     <parameter key="router_listener.class">Symfony\Component\HttpKernel\EventListener\RouterListener</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
     <parameter key="router.resource">C:\xampp\htdocs\turnos-app\app/config/routing_dev.yml</parameter>
-    <parameter key="router.cache_class_prefix">appDev</parameter>
+    <parameter key="router.cache_class_prefix">appTest</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
     <parameter key="annotations.reader.class">Doctrine\Common\Annotations\AnnotationReader</parameter>
@@ -254,7 +259,7 @@
     <parameter key="debug.stopwatch.class">Symfony\Component\Stopwatch\Stopwatch</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
     <parameter key="debug.event_dispatcher.class">Symfony\Component\HttpKernel\Debug\TraceableEventDispatcher</parameter>
-    <parameter key="debug.container.dump">C:\xampp\htdocs\turnos-app\app\cache\dev/appDevDebugProjectContainer.xml</parameter>
+    <parameter key="debug.container.dump">C:\xampp\htdocs\turnos-app\app\cache\test/appTestDebugProjectContainer.xml</parameter>
     <parameter key="debug.controller_resolver.class">Symfony\Component\HttpKernel\Controller\TraceableControllerResolver</parameter>
     <parameter key="security.context.class">Symfony\Component\Security\Core\SecurityContext</parameter>
     <parameter key="security.user_checker.class">Symfony\Component\Security\Core\User\UserChecker</parameter>
@@ -417,7 +422,7 @@
     <parameter key="swiftmailer.email_sender.listener.class">Symfony\Bundle\SwiftmailerBundle\EventListener\EmailSenderListener</parameter>
     <parameter key="swiftmailer.data_collector.class">Symfony\Bundle\SwiftmailerBundle\DataCollector\MessageDataCollector</parameter>
     <parameter key="swiftmailer.mailer.default.transport.name">smtp</parameter>
-    <parameter key="swiftmailer.mailer.default.delivery.enabled">true</parameter>
+    <parameter key="swiftmailer.mailer.default.delivery.enabled">false</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.encryption">null</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.port">2525</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.host">centrocristales.dynns.com</parameter>
@@ -439,7 +444,7 @@
       <parameter>/^aimara\.larraza@gmail\.com$/</parameter>
     </parameter>
     <parameter key="swiftmailer.spool.enabled">true</parameter>
-    <parameter key="swiftmailer.delivery.enabled">true</parameter>
+    <parameter key="swiftmailer.delivery.enabled">false</parameter>
     <parameter key="swiftmailer.single_address">gabrielromero@gmail.com</parameter>
     <parameter key="swiftmailer.mailers" type="collection">
       <parameter key="default">swiftmailer.mailer.default</parameter>
@@ -459,7 +464,7 @@
     <parameter key="assetic.worker.cache_busting.class">Assetic\Factory\Worker\CacheBustingWorker</parameter>
     <parameter key="assetic.value_supplier.class">Symfony\Bundle\AsseticBundle\DefaultValueSupplier</parameter>
     <parameter key="assetic.node.paths" type="collection"/>
-    <parameter key="assetic.cache_dir">C:\xampp\htdocs\turnos-app\app\cache\dev/assetic</parameter>
+    <parameter key="assetic.cache_dir">C:\xampp\htdocs\turnos-app\app\cache\test/assetic</parameter>
     <parameter key="assetic.bundles" type="collection">
       <parameter>LCSAppBundle</parameter>
     </parameter>
@@ -578,7 +583,7 @@
     <parameter key="doctrine.orm.second_level_cache.cache_configuration.class">Doctrine\ORM\Cache\CacheConfiguration</parameter>
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
-    <parameter key="doctrine.orm.proxy_dir">C:\xampp\htdocs\turnos-app\app\cache\dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">C:\xampp\htdocs\turnos-app\app\cache\test/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="sensio_framework_extra.view.guesser.class">Sensio\Bundle\FrameworkExtraBundle\Templating\TemplateGuesser</parameter>
     <parameter key="sensio_framework_extra.controller.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener</parameter>
@@ -612,9 +617,6 @@
     <parameter key="web_profiler.controller.exception.class">Symfony\Bundle\WebProfilerBundle\Controller\ExceptionController</parameter>
     <parameter key="twig.extension.webprofiler.class">Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension</parameter>
     <parameter key="web_profiler.debug_toolbar.position">bottom</parameter>
-    <parameter key="web_profiler.debug_toolbar.class">Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener</parameter>
-    <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
-    <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
     <parameter key="sensio_distribution.webconfigurator.class">Sensio\Bundle\DistributionBundle\Configurator\Configurator</parameter>
     <parameter key="sensio_distribution.webconfigurator.doctrine_step.class">Sensio\Bundle\DistributionBundle\Configurator\Step\DoctrineStep</parameter>
     <parameter key="sensio_distribution.webconfigurator.secret_step.class">Sensio\Bundle\DistributionBundle\Configurator\Step\SecretStep</parameter>
@@ -877,7 +879,7 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\xampp\htdocs\turnos-app\app\cache\dev/translations</argument>
+        <argument key="cache_dir">C:\xampp\htdocs\turnos-app\app\cache\test/translations</argument>
         <argument key="debug">true</argument>
       </argument>
       <argument type="collection"/>
@@ -1058,8 +1060,24 @@
       <argument>false</argument>
       <argument>false</argument>
     </service>
+    <service id="test.client" class="Symfony\Bundle\FrameworkBundle\Client" scope="prototype">
+      <argument type="service" id="kernel"/>
+      <argument type="collection"/>
+      <argument type="service">
+        <service class="Symfony\Component\BrowserKit\History" scope="prototype"/>
+      </argument>
+      <argument type="service">
+        <service class="Symfony\Component\BrowserKit\CookieJar" scope="prototype"/>
+      </argument>
+    </service>
+    <service id="test.client.history" class="Symfony\Component\BrowserKit\History" scope="prototype"/>
+    <service id="test.client.cookiejar" class="Symfony\Component\BrowserKit\CookieJar" scope="prototype"/>
+    <service id="test.session.listener" class="Symfony\Bundle\FrameworkBundle\EventListener\TestSessionListener">
+      <tag name="kernel.event_subscriber"/>
+      <argument type="service" id="service_container"/>
+    </service>
     <service id="session" class="Symfony\Component\HttpFoundation\Session\Session">
-      <argument type="service" id="session.storage.native"/>
+      <argument type="service" id="session.storage.filesystem"/>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag" public="false"/>
       </argument>
@@ -1091,7 +1109,7 @@
     </service>
     <service id="security.secure_random" class="Symfony\Component\Security\Core\Util\SecureRandom">
       <tag name="monolog.logger" channel="security"/>
-      <argument>C:\xampp\htdocs\turnos-app\app\cache\dev/secure_random.seed</argument>
+      <argument>C:\xampp\htdocs\turnos-app\app\cache\test/secure_random.seed</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="ignore"/>
     </service>
     <service id="form.resolved_type_factory" class="Symfony\Component\Form\Extension\DataCollector\Proxy\ResolvedTypeFactoryDataCollectorProxy">
@@ -1329,7 +1347,7 @@
     <service id="templating.filename_parser" class="Symfony\Bundle\FrameworkBundle\Templating\TemplateFilenameParser"/>
     <service id="templating.locator" class="Symfony\Bundle\FrameworkBundle\Templating\Loader\TemplateLocator" public="false">
       <argument type="service" id="file_locator"/>
-      <argument>C:\xampp\htdocs\turnos-app\app\cache\dev</argument>
+      <argument>C:\xampp\htdocs\turnos-app\app\cache\test</argument>
     </service>
     <service id="templating.helper.assets" class="Symfony\Bundle\FrameworkBundle\Templating\Helper\AssetsHelper">
       <tag name="templating.helper" alias="assets"/>
@@ -1398,13 +1416,14 @@
       <tag name="monolog.logger" channel="profiler"/>
       <argument type="service">
         <service class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage" public="false">
-          <argument>file:C:\xampp\htdocs\turnos-app\app\cache\dev/profiler</argument>
+          <argument>file:C:\xampp\htdocs\turnos-app\app\cache\test/profiler</argument>
           <argument></argument>
           <argument></argument>
           <argument>86400</argument>
         </service>
       </argument>
       <argument type="service" id="monolog.logger.profiler" on-invalid="null"/>
+      <call method="disable"/>
       <call method="add">
         <argument type="service">
           <service class="Symfony\Component\HttpKernel\DataCollector\ConfigDataCollector" public="false">
@@ -1675,6 +1694,10 @@
         <argument>Symfony\Component\HttpKernel\EventListener\TranslatorListener</argument>
       </call>
       <call method="addSubscriberService">
+        <argument>test.session.listener</argument>
+        <argument>Symfony\Bundle\FrameworkBundle\EventListener\TestSessionListener</argument>
+      </call>
+      <call method="addSubscriberService">
         <argument>session_listener</argument>
         <argument>Symfony\Bundle\FrameworkBundle\EventListener\SessionListener</argument>
       </call>
@@ -1750,10 +1773,6 @@
         <argument>debug.dump_listener</argument>
         <argument>Symfony\Component\HttpKernel\EventListener\DumpListener</argument>
       </call>
-      <call method="addSubscriberService">
-        <argument>web_profiler.debug_toolbar</argument>
-        <argument>Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener</argument>
-      </call>
     </service>
     <service id="debug.controller_resolver" class="Symfony\Component\HttpKernel\Controller\TraceableControllerResolver">
       <argument type="service">
@@ -1781,7 +1800,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>583729c84e28f5.68040136</argument>
+            <argument>5836bc10439ac6.65185838</argument>
           </service>
         </argument>
       </argument>
@@ -1904,7 +1923,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>583729c84e28f5.68040136</argument>
+            <argument>5836bc10439ac6.65185838</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -1951,7 +1970,7 @@
           <argument>LCSAppBundle:Form:fields.html.twig</argument>
         </argument>
         <argument key="autoescape">filename</argument>
-        <argument key="cache">C:\xampp\htdocs\turnos-app\app\cache\dev/twig</argument>
+        <argument key="cache">C:\xampp\htdocs\turnos-app\app\cache\test/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="paths" type="collection"/>
         <argument key="date" type="collection">
@@ -2151,7 +2170,7 @@
         <argument type="service">
           <service class="Symfony\Bridge\Twig\AppVariable" public="false">
             <call method="setEnvironment">
-              <argument>dev</argument>
+              <argument>test</argument>
             </call>
             <call method="setDebug">
               <argument>true</argument>
@@ -2199,7 +2218,7 @@
       <argument>twig.controller.exception:showAction</argument>
     </service>
     <service id="monolog.handler.main" class="Monolog\Handler\StreamHandler">
-      <argument>C:\xampp\htdocs\turnos-app\app\logs/dev.log</argument>
+      <argument>C:\xampp\htdocs\turnos-app\app\logs/test.log</argument>
       <argument>100</argument>
       <argument>true</argument>
       <argument>null</argument>
@@ -2264,7 +2283,7 @@
             </argument>
             <argument type="service">
               <service class="Assetic\Cache\ConfigCache" public="false">
-                <argument>C:\xampp\htdocs\turnos-app\app\cache\dev/assetic/config</argument>
+                <argument>C:\xampp\htdocs\turnos-app\app\cache\test/assetic/config</argument>
               </service>
             </argument>
             <argument>true</argument>
@@ -2428,17 +2447,17 @@
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_metadata_cache" class="Doctrine\Common\Cache\ArrayCache">
       <call method="setNamespace">
-        <argument>sf2orm_default_0330b7ec204821cff81546ac25e1e2b24e08b13c02e9a2631b7b257b4a0f2f1a</argument>
+        <argument>sf2orm_default_09bf4170c944ca6a408680c6eab33181489a2a1339ec612e3e344e03a1ecdef4</argument>
       </call>
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_result_cache" class="Doctrine\Common\Cache\ArrayCache">
       <call method="setNamespace">
-        <argument>sf2orm_default_0330b7ec204821cff81546ac25e1e2b24e08b13c02e9a2631b7b257b4a0f2f1a</argument>
+        <argument>sf2orm_default_09bf4170c944ca6a408680c6eab33181489a2a1339ec612e3e344e03a1ecdef4</argument>
       </call>
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_query_cache" class="Doctrine\Common\Cache\ArrayCache">
       <call method="setNamespace">
-        <argument>sf2orm_default_0330b7ec204821cff81546ac25e1e2b24e08b13c02e9a2631b7b257b4a0f2f1a</argument>
+        <argument>sf2orm_default_09bf4170c944ca6a408680c6eab33181489a2a1339ec612e3e344e03a1ecdef4</argument>
       </call>
     </service>
     <service id="doctrine.orm.default_entity_listener_resolver" class="Doctrine\ORM\Mapping\DefaultEntityListenerResolver"/>
@@ -2452,7 +2471,6 @@
         <service class="Doctrine\ORM\Configuration" public="false">
           <call method="setEntityNamespaces">
             <argument type="collection">
-              <argument key="LCSServicioBundle">LCS\ServicioBundle\Entity</argument>
               <argument key="LCSAppBundle">LCS\AppBundle\Entity</argument>
             </argument>
           </call>
@@ -2473,17 +2491,7 @@
                     <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
-                        <argument>C:\xampp\htdocs\turnos-app\src\LCS\ServicioBundle\Entity</argument>
-                      </argument>
-                    </service>
-                  </argument>
-                  <argument>LCS\ServicioBundle\Entity</argument>
-                </call>
-                <call method="addDriver">
-                  <argument type="service">
-                    <service class="Doctrine\ORM\Mapping\Driver\PHPDriver" public="false">
-                      <argument type="collection">
-                        <argument>C:\xampp\htdocs\turnos-app\src\LCS\AppBundle\Resources\config\doctrine</argument>
+                        <argument>C:\xampp\htdocs\turnos-app\src\LCS\AppBundle\Entity</argument>
                       </argument>
                     </service>
                   </argument>
@@ -2493,7 +2501,7 @@
             </argument>
           </call>
           <call method="setProxyDir">
-            <argument>C:\xampp\htdocs\turnos-app\app\cache\dev/doctrine/orm/Proxies</argument>
+            <argument>C:\xampp\htdocs\turnos-app\app\cache\test/doctrine/orm/Proxies</argument>
           </call>
           <call method="setProxyNamespace">
             <argument>Proxies</argument>
@@ -2577,7 +2585,7 @@
     <service id="fos_js_routing.extractor" class="FOS\JsRoutingBundle\Extractor\ExposedRoutesExtractor">
       <argument type="service" id="router"/>
       <argument type="collection"/>
-      <argument>C:\xampp\htdocs\turnos-app\app\cache\dev</argument>
+      <argument>C:\xampp\htdocs\turnos-app\app\cache\test</argument>
       <argument type="collection">
         <argument key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</argument>
         <argument key="SecurityBundle">Symfony\Bundle\SecurityBundle\SecurityBundle</argument>
@@ -2626,7 +2634,7 @@
         <argument key="consultasapp@centrocristales.com">Consultas Centro Cristales</argument>
       </argument>
       <argument>consultasapp@centrocristales.com</argument>
-      <argument>C:\xampp\htdocs\turnos-app\app\cache\dev/attachments/</argument>
+      <argument>C:\xampp\htdocs\turnos-app\app\cache\test/attachments/</argument>
     </service>
     <service id="lcs_servicio.service.pedidopresupuesto" class="LCS\ServicioBundle\Service\PedidoPresupuestoService">
       <argument type="service" id="swiftmailer.mailer.default"/>
@@ -2635,7 +2643,7 @@
         <argument key="consultasapp@centrocristales.com">Consultas Centro Cristales</argument>
       </argument>
       <argument>consultasapp@centrocristales.com</argument>
-      <argument>C:\xampp\htdocs\turnos-app\app\cache\dev/attachments/</argument>
+      <argument>C:\xampp\htdocs\turnos-app\app\cache\test/attachments/</argument>
     </service>
     <service id="lcs_servicio.service.consultaordentrabajo" class="LCS\ServicioBundle\Service\ConsultaOrdenTrabajoService">
       <argument type="service" id="guzzle.client.ws_crm_rest"/>
@@ -2691,7 +2699,7 @@
       <argument type="service" id="debug.stopwatch" on-invalid="ignore"/>
       <argument>null</argument>
       <argument>UTF-8</argument>
-      <argument type="service" id="request_stack"/>
+      <argument>null</argument>
       <argument>null</argument>
     </service>
     <service id="debug.dump_listener" class="Symfony\Component\HttpKernel\EventListener\DumpListener">
@@ -2792,15 +2800,6 @@
       <argument type="service" id="profiler" on-invalid="null"/>
       <argument type="service" id="twig"/>
       <argument>true</argument>
-    </service>
-    <service id="web_profiler.debug_toolbar" class="Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener">
-      <tag name="kernel.event_subscriber"/>
-      <argument type="service" id="twig"/>
-      <argument>false</argument>
-      <argument>2</argument>
-      <argument>bottom</argument>
-      <argument type="service" id="router" on-invalid="ignore"/>
-      <argument>^/(app(_[\w]+)?\.php/)?_wdt</argument>
     </service>
     <service id="sensio_distribution.webconfigurator" class="Sensio\Bundle\DistributionBundle\Configurator\Configurator">
       <argument>C:\xampp\htdocs\turnos-app\app</argument>
@@ -2988,7 +2987,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.filesystem" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage">
-      <argument>C:\xampp\htdocs\turnos-app\app\cache\dev/sessions</argument>
+      <argument>C:\xampp\htdocs\turnos-app\app\cache\test/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service" id="session.storage.metadata_bag"/>
     </service>
@@ -3005,16 +3004,16 @@
       <argument type="service" id="service_container"/>
       <argument>C:\xampp\htdocs\turnos-app\app/config/routing_dev.yml</argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\xampp\htdocs\turnos-app\app\cache\dev</argument>
+        <argument key="cache_dir">C:\xampp\htdocs\turnos-app\app\cache\test</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
         <argument key="generator_base_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\PhpGeneratorDumper</argument>
-        <argument key="generator_cache_class">appDevUrlGenerator</argument>
+        <argument key="generator_cache_class">appTestUrlGenerator</argument>
         <argument key="matcher_class">Symfony\Bundle\FrameworkBundle\Routing\RedirectableUrlMatcher</argument>
         <argument key="matcher_base_class">Symfony\Bundle\FrameworkBundle\Routing\RedirectableUrlMatcher</argument>
         <argument key="matcher_dumper_class">Symfony\Component\Routing\Matcher\Dumper\PhpMatcherDumper</argument>
-        <argument key="matcher_cache_class">appDevUrlMatcher</argument>
+        <argument key="matcher_cache_class">appTestUrlMatcher</argument>
         <argument key="strict_requirements">true</argument>
       </argument>
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
@@ -3024,7 +3023,7 @@
       <argument type="service">
         <service class="Doctrine\Common\Annotations\AnnotationReader" public="false"/>
       </argument>
-      <argument>C:\xampp\htdocs\turnos-app\app\cache\dev/annotations</argument>
+      <argument>C:\xampp\htdocs\turnos-app\app\cache\test/annotations</argument>
       <argument>true</argument>
     </service>
     <service id="security.encoder_factory" class="Symfony\Component\Security\Core\Encoder\EncoderFactory">
@@ -3060,10 +3059,6 @@
       <call method="addPath">
         <argument>C:\xampp\htdocs\turnos-app\src\LCS\WebServiceBundle/Resources/views</argument>
         <argument>LCSWebService</argument>
-      </call>
-      <call method="addPath">
-        <argument>C:\xampp\htdocs\turnos-app\src\LCS\ServicioBundle/Resources/views</argument>
-        <argument>LCSServicio</argument>
       </call>
       <call method="addPath">
         <argument>C:\xampp\htdocs\turnos-app\vendor\eightpoints\guzzle-bundle\EightPoints\Bundle\GuzzleBundle/Resources/views</argument>
@@ -3120,56 +3115,8 @@
     <service id="swiftmailer.mailer.default.spool" class="Swift_FileSpool">
       <argument>C:\xampp\htdocs\turnos-app\app/spool/default</argument>
     </service>
-    <service id="swiftmailer.mailer.default.transport.real" class="Swift_Transport_EsmtpTransport">
-      <argument type="service">
-        <service class="Swift_Transport_StreamBuffer" public="false">
-          <argument type="service">
-            <service class="Swift_StreamFilters_StringReplacementFilterFactory" public="false"/>
-          </argument>
-        </service>
-      </argument>
-      <argument type="collection">
-        <argument type="service">
-          <service class="Swift_Transport_Esmtp_AuthHandler" public="false">
-            <argument type="collection">
-              <argument type="service">
-                <service class="Swift_Transport_Esmtp_Auth_CramMd5Authenticator" public="false"/>
-              </argument>
-              <argument type="service">
-                <service class="Swift_Transport_Esmtp_Auth_LoginAuthenticator" public="false"/>
-              </argument>
-              <argument type="service">
-                <service class="Swift_Transport_Esmtp_Auth_PlainAuthenticator" public="false"/>
-              </argument>
-            </argument>
-            <call method="setUsername">
-              <argument>consultasapp@centrocristales.com</argument>
-            </call>
-            <call method="setPassword">
-              <argument>123cc321</argument>
-            </call>
-            <call method="setAuthMode">
-              <argument>null</argument>
-            </call>
-          </service>
-        </argument>
-      </argument>
+    <service id="swiftmailer.mailer.default.transport.real" class="Swift_Transport_NullTransport">
       <argument type="service" id="swiftmailer.mailer.default.transport.eventdispatcher"/>
-      <call method="setHost">
-        <argument>centrocristales.dynns.com</argument>
-      </call>
-      <call method="setPort">
-        <argument>2525</argument>
-      </call>
-      <call method="setEncryption">
-        <argument>null</argument>
-      </call>
-      <call method="setTimeout">
-        <argument>30</argument>
-      </call>
-      <call method="setSourceIp">
-        <argument>null</argument>
-      </call>
     </service>
     <service id="swiftmailer.plugin.redirecting" class="Swift_Plugins_RedirectingPlugin">
       <tag name="swiftmailer.default.plugin"/>
@@ -3182,7 +3129,7 @@
         <argument>/^aimara\.larraza@gmail\.com$/</argument>
       </argument>
     </service>
-    <service id="session.storage" alias="session.storage.native"/>
+    <service id="session.storage" alias="session.storage.filesystem"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher"/>
     <service id="swiftmailer.spool" alias="swiftmailer.mailer.default.spool"/>
     <service id="swiftmailer.transport.real" alias="swiftmailer.mailer.default.transport.real"/>

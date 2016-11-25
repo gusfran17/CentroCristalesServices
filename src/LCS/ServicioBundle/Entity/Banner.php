@@ -1,6 +1,6 @@
 <?php
 
-namespace LCS\AppBundle\Entity;
+namespace LCS\ServicioBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -31,7 +31,7 @@ class Banner
     /**
      * @var string
      *
-     * @ORM\Column(name="file_name", type="string", length=200)
+     * @ORM\Column(name="fileName", type="string", length=200)
      */
     private $fileName;
 

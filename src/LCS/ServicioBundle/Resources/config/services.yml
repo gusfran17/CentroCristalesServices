@@ -5,3 +5,6 @@ services:
     lcs_servicio.service.consultaordentrabajo:
         class: LCS\ServicioBundle\Service\ConsultaOrdenTrabajoService
         arguments: ['@guzzle.client.ws_crm_rest']
+    lcs_servicio.service.consultabanner:
+        class: LCS\ServicioBundle\Service\ConsultaBannerService
+        arguments: []

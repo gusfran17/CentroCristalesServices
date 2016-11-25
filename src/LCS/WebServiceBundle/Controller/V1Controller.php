@@ -23,7 +23,10 @@ class V1Controller extends Controller
      */
     public function indexAction()
     {
-        return array();
+    	$data = array();
+    	$data['status'] = 0;
+		$data['mensaje'] = "Index";
+        return $data;
     }
 
 
@@ -76,9 +79,10 @@ class V1Controller extends Controller
 
 		$data = array();
 
-		
+		$pedidoPresupuestoService = $this->get('lcs_servicio.service.consultabanner');
 		$data['status'] = 100;
 		$data['mensaje'] = "Successful Call";
+		$data['mensaje2'] = "Successful Call";
 	
 		return new JsonResponse($data);
 	}
