@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
-    <parameter key="kernel.root_dir">C:\xampp\htdocs\turnos-app\app</parameter>
+    <parameter key="kernel.root_dir">C:\xampp\htdocs\turnos-app-last\app</parameter>
     <parameter key="kernel.environment">test</parameter>
     <parameter key="kernel.debug">true</parameter>
     <parameter key="kernel.name">app</parameter>
-    <parameter key="kernel.cache_dir">C:\xampp\htdocs\turnos-app\app\cache\test</parameter>
-    <parameter key="kernel.logs_dir">C:\xampp\htdocs\turnos-app\app\logs</parameter>
+    <parameter key="kernel.cache_dir">C:\xampp\htdocs\turnos-app-last\app\cache\test</parameter>
+    <parameter key="kernel.logs_dir">C:\xampp\htdocs\turnos-app-last\app\logs</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="SecurityBundle">Symfony\Bundle\SecurityBundle\SecurityBundle</parameter>
@@ -44,7 +44,7 @@
       <parameter key="consultasapp@centrocristales.com">Consultas Centro Cristales</parameter>
     </parameter>
     <parameter key="mailer_pedido_presupuesto_address">consultasapp@centrocristales.com</parameter>
-    <parameter key="mailer_attachments_dir">C:\xampp\htdocs\turnos-app\app\cache\test/attachments/</parameter>
+    <parameter key="mailer_attachments_dir">C:\xampp\htdocs\turnos-app-last\app\cache\test/attachments/</parameter>
     <parameter key="secret">b9922ab2f02273306d852df389317709e8ff6c93</parameter>
     <parameter key="app_version">v2.0</parameter>
     <parameter key="lcs_app.service1.wsdl">http://centrocristales.dynns.com:8094/wscrm/service1.asmx?WSDL</parameter>
@@ -167,7 +167,7 @@
     <parameter key="session.storage.options" type="collection">
       <parameter key="gc_probability">1</parameter>
     </parameter>
-    <parameter key="session.save_path">C:\xampp\htdocs\turnos-app\app\cache\test/sessions</parameter>
+    <parameter key="session.save_path">C:\xampp\htdocs\turnos-app-last\app\cache\test/sessions</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="security.secure_random.class">Symfony\Component\Security\Core\Util\SecureRandom</parameter>
     <parameter key="form.resolved_type_factory.class">Symfony\Component\Form\ResolvedFormTypeFactory</parameter>
@@ -224,7 +224,7 @@
     <parameter key="data_collector.form.extractor.class">Symfony\Component\Form\Extension\DataCollector\FormDataExtractor</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_master_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:C:\xampp\htdocs\turnos-app\app\cache\test/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:C:\xampp\htdocs\turnos-app-last\app\cache\test/profiler</parameter>
     <parameter key="profiler.storage.username"></parameter>
     <parameter key="profiler.storage.password"></parameter>
     <parameter key="profiler.storage.lifetime">86400</parameter>
@@ -248,7 +248,7 @@
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
-    <parameter key="router.resource">C:\xampp\htdocs\turnos-app\app/config/routing_dev.yml</parameter>
+    <parameter key="router.resource">C:\xampp\htdocs\turnos-app-last\app/config/routing_dev.yml</parameter>
     <parameter key="router.cache_class_prefix">appTest</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
@@ -259,7 +259,7 @@
     <parameter key="debug.stopwatch.class">Symfony\Component\Stopwatch\Stopwatch</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
     <parameter key="debug.event_dispatcher.class">Symfony\Component\HttpKernel\Debug\TraceableEventDispatcher</parameter>
-    <parameter key="debug.container.dump">C:\xampp\htdocs\turnos-app\app\cache\test/appTestDebugProjectContainer.xml</parameter>
+    <parameter key="debug.container.dump">C:\xampp\htdocs\turnos-app-last\app\cache\test/appTestDebugProjectContainer.xml</parameter>
     <parameter key="debug.controller_resolver.class">Symfony\Component\HttpKernel\Controller\TraceableControllerResolver</parameter>
     <parameter key="security.context.class">Symfony\Component\Security\Core\SecurityContext</parameter>
     <parameter key="security.user_checker.class">Symfony\Component\Security\Core\User\UserChecker</parameter>
@@ -431,7 +431,7 @@
     <parameter key="swiftmailer.mailer.default.transport.smtp.auth_mode">null</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.timeout">30</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.source_ip">null</parameter>
-    <parameter key="swiftmailer.spool.default.file.path">C:\xampp\htdocs\turnos-app\app/spool/default</parameter>
+    <parameter key="swiftmailer.spool.default.file.path">C:\xampp\htdocs\turnos-app-last\app/spool/default</parameter>
     <parameter key="swiftmailer.mailer.default.spool.enabled">true</parameter>
     <parameter key="swiftmailer.mailer.default.plugin.impersonate">null</parameter>
     <parameter key="swiftmailer.mailer.default.single_address">gabrielromero@gmail.com</parameter>
@@ -464,7 +464,7 @@
     <parameter key="assetic.worker.cache_busting.class">Assetic\Factory\Worker\CacheBustingWorker</parameter>
     <parameter key="assetic.value_supplier.class">Symfony\Bundle\AsseticBundle\DefaultValueSupplier</parameter>
     <parameter key="assetic.node.paths" type="collection"/>
-    <parameter key="assetic.cache_dir">C:\xampp\htdocs\turnos-app\app\cache\test/assetic</parameter>
+    <parameter key="assetic.cache_dir">C:\xampp\htdocs\turnos-app-last\app\cache\test/assetic</parameter>
     <parameter key="assetic.bundles" type="collection">
       <parameter>LCSAppBundle</parameter>
     </parameter>
@@ -476,8 +476,8 @@
     <parameter key="assetic.debug">true</parameter>
     <parameter key="assetic.use_controller">false</parameter>
     <parameter key="assetic.enable_profiler">false</parameter>
-    <parameter key="assetic.read_from">C:\xampp\htdocs\turnos-app\app/../web</parameter>
-    <parameter key="assetic.write_to">C:\xampp\htdocs\turnos-app\app/../web</parameter>
+    <parameter key="assetic.read_from">C:\xampp\htdocs\turnos-app-last\app/../web</parameter>
+    <parameter key="assetic.write_to">C:\xampp\htdocs\turnos-app-last\app/../web</parameter>
     <parameter key="assetic.variables" type="collection"/>
     <parameter key="assetic.java.bin">C:\ProgramData\Oracle\Java\javapath\java.EXE</parameter>
     <parameter key="assetic.node.bin">/usr/bin/node</parameter>
@@ -583,7 +583,7 @@
     <parameter key="doctrine.orm.second_level_cache.cache_configuration.class">Doctrine\ORM\Cache\CacheConfiguration</parameter>
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
-    <parameter key="doctrine.orm.proxy_dir">C:\xampp\htdocs\turnos-app\app\cache\test/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">C:\xampp\htdocs\turnos-app-last\app\cache\test/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="sensio_framework_extra.view.guesser.class">Sensio\Bundle\FrameworkExtraBundle\Templating\TemplateGuesser</parameter>
     <parameter key="sensio_framework_extra.controller.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener</parameter>
@@ -732,7 +732,7 @@
               <service class="Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder" public="false">
                 <argument type="service" id="kernel"/>
                 <argument type="service" id="templating.filename_parser"/>
-                <argument>C:\xampp\htdocs\turnos-app\app/Resources</argument>
+                <argument>C:\xampp\htdocs\turnos-app-last\app/Resources</argument>
               </service>
             </argument>
             <argument type="service" id="templating.locator"/>
@@ -773,7 +773,7 @@
     <service id="filesystem" class="Symfony\Component\Filesystem\Filesystem"/>
     <service id="file_locator" class="Symfony\Component\HttpKernel\Config\FileLocator">
       <argument type="service" id="kernel"/>
-      <argument>C:\xampp\htdocs\turnos-app\app/Resources</argument>
+      <argument>C:\xampp\htdocs\turnos-app-last\app/Resources</argument>
     </service>
     <service id="uri_signer" class="Symfony\Component\HttpKernel\UriSigner">
       <argument>b9922ab2f02273306d852df389317709e8ff6c93</argument>
@@ -879,7 +879,7 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\xampp\htdocs\turnos-app\app\cache\test/translations</argument>
+        <argument key="cache_dir">C:\xampp\htdocs\turnos-app-last\app\cache\test/translations</argument>
         <argument key="debug">true</argument>
       </argument>
       <argument type="collection"/>
@@ -1109,7 +1109,7 @@
     </service>
     <service id="security.secure_random" class="Symfony\Component\Security\Core\Util\SecureRandom">
       <tag name="monolog.logger" channel="security"/>
-      <argument>C:\xampp\htdocs\turnos-app\app\cache\test/secure_random.seed</argument>
+      <argument>C:\xampp\htdocs\turnos-app-last\app\cache\test/secure_random.seed</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="ignore"/>
     </service>
     <service id="form.resolved_type_factory" class="Symfony\Component\Form\Extension\DataCollector\Proxy\ResolvedTypeFactoryDataCollectorProxy">
@@ -1347,7 +1347,7 @@
     <service id="templating.filename_parser" class="Symfony\Bundle\FrameworkBundle\Templating\TemplateFilenameParser"/>
     <service id="templating.locator" class="Symfony\Bundle\FrameworkBundle\Templating\Loader\TemplateLocator" public="false">
       <argument type="service" id="file_locator"/>
-      <argument>C:\xampp\htdocs\turnos-app\app\cache\test</argument>
+      <argument>C:\xampp\htdocs\turnos-app-last\app\cache\test</argument>
     </service>
     <service id="templating.helper.assets" class="Symfony\Bundle\FrameworkBundle\Templating\Helper\AssetsHelper">
       <tag name="templating.helper" alias="assets"/>
@@ -1383,7 +1383,7 @@
       </call>
       <call method="addXmlMappings">
         <argument type="collection">
-          <argument>C:\xampp\htdocs\turnos-app\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/config/validation.xml</argument>
+          <argument>C:\xampp\htdocs\turnos-app-last\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/config/validation.xml</argument>
         </argument>
       </call>
       <call method="enableAnnotationMapping">
@@ -1416,7 +1416,7 @@
       <tag name="monolog.logger" channel="profiler"/>
       <argument type="service">
         <service class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage" public="false">
-          <argument>file:C:\xampp\htdocs\turnos-app\app\cache\test/profiler</argument>
+          <argument>file:C:\xampp\htdocs\turnos-app-last\app\cache\test/profiler</argument>
           <argument></argument>
           <argument></argument>
           <argument>86400</argument>
@@ -1800,7 +1800,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5836bc10439ac6.65185838</argument>
+            <argument>583c57c30cc740.68833350</argument>
           </service>
         </argument>
       </argument>
@@ -1923,7 +1923,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>5836bc10439ac6.65185838</argument>
+            <argument>583c57c30cc740.68833350</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -1970,7 +1970,7 @@
           <argument>LCSAppBundle:Form:fields.html.twig</argument>
         </argument>
         <argument key="autoescape">filename</argument>
-        <argument key="cache">C:\xampp\htdocs\turnos-app\app\cache\test/twig</argument>
+        <argument key="cache">C:\xampp\htdocs\turnos-app-last\app\cache\test/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="paths" type="collection"/>
         <argument key="date" type="collection">
@@ -2044,7 +2044,7 @@
           <service class="Symfony\Bridge\Twig\Extension\CodeExtension" public="false">
             <tag name="twig.extension"/>
             <argument>null</argument>
-            <argument>C:\xampp\htdocs\turnos-app\app</argument>
+            <argument>C:\xampp\htdocs\turnos-app-last\app</argument>
             <argument>UTF-8</argument>
           </service>
         </argument>
@@ -2218,7 +2218,7 @@
       <argument>twig.controller.exception:showAction</argument>
     </service>
     <service id="monolog.handler.main" class="Monolog\Handler\StreamHandler">
-      <argument>C:\xampp\htdocs\turnos-app\app\logs/test.log</argument>
+      <argument>C:\xampp\htdocs\turnos-app-last\app\logs/test.log</argument>
       <argument>100</argument>
       <argument>true</argument>
       <argument>null</argument>
@@ -2283,7 +2283,7 @@
             </argument>
             <argument type="service">
               <service class="Assetic\Cache\ConfigCache" public="false">
-                <argument>C:\xampp\htdocs\turnos-app\app\cache\test/assetic/config</argument>
+                <argument>C:\xampp\htdocs\turnos-app-last\app\cache\test/assetic/config</argument>
               </service>
             </argument>
             <argument>true</argument>
@@ -2327,7 +2327,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>LCSAppBundle</argument>
-                  <argument>C:\xampp\htdocs\turnos-app\app/Resources/LCSAppBundle/views</argument>
+                  <argument>C:\xampp\htdocs\turnos-app-last\app/Resources/LCSAppBundle/views</argument>
                   <argument>/\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2335,7 +2335,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>LCSAppBundle</argument>
-                  <argument>C:\xampp\htdocs\turnos-app\src\LCS\AppBundle/Resources/views</argument>
+                  <argument>C:\xampp\htdocs\turnos-app-last\src\LCS\AppBundle/Resources/views</argument>
                   <argument>/\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2351,7 +2351,7 @@
             <tag name="assetic.formula_resource" loader="twig"/>
             <argument type="service" id="templating.loader"/>
             <argument></argument>
-            <argument>C:\xampp\htdocs\turnos-app\app/Resources/views</argument>
+            <argument>C:\xampp\htdocs\turnos-app-last\app/Resources/views</argument>
             <argument>/\.[^.]+\.twig$/</argument>
           </service>
         </argument>
@@ -2366,7 +2366,7 @@
           <factory service="service_container" method="getParameterBag"/>
         </service>
       </argument>
-      <argument>C:\xampp\htdocs\turnos-app\app/../web</argument>
+      <argument>C:\xampp\htdocs\turnos-app-last\app/../web</argument>
       <argument>true</argument>
     </service>
     <service id="doctrine.dbal.connection_factory" class="Doctrine\Bundle\DoctrineBundle\ConnectionFactory">
@@ -2447,17 +2447,17 @@
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_metadata_cache" class="Doctrine\Common\Cache\ArrayCache">
       <call method="setNamespace">
-        <argument>sf2orm_default_09bf4170c944ca6a408680c6eab33181489a2a1339ec612e3e344e03a1ecdef4</argument>
+        <argument>sf2orm_default_43b218eba4644a9655e5f7d70e62c184ac768d2e1be38cf44312c9f89045c108</argument>
       </call>
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_result_cache" class="Doctrine\Common\Cache\ArrayCache">
       <call method="setNamespace">
-        <argument>sf2orm_default_09bf4170c944ca6a408680c6eab33181489a2a1339ec612e3e344e03a1ecdef4</argument>
+        <argument>sf2orm_default_43b218eba4644a9655e5f7d70e62c184ac768d2e1be38cf44312c9f89045c108</argument>
       </call>
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_query_cache" class="Doctrine\Common\Cache\ArrayCache">
       <call method="setNamespace">
-        <argument>sf2orm_default_09bf4170c944ca6a408680c6eab33181489a2a1339ec612e3e344e03a1ecdef4</argument>
+        <argument>sf2orm_default_43b218eba4644a9655e5f7d70e62c184ac768d2e1be38cf44312c9f89045c108</argument>
       </call>
     </service>
     <service id="doctrine.orm.default_entity_listener_resolver" class="Doctrine\ORM\Mapping\DefaultEntityListenerResolver"/>
@@ -2471,7 +2471,7 @@
         <service class="Doctrine\ORM\Configuration" public="false">
           <call method="setEntityNamespaces">
             <argument type="collection">
-              <argument key="LCSAppBundle">LCS\AppBundle\Entity</argument>
+              <argument key="LCSServicioBundle">LCS\ServicioBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -2491,17 +2491,17 @@
                     <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
-                        <argument>C:\xampp\htdocs\turnos-app\src\LCS\AppBundle\Entity</argument>
+                        <argument>C:\xampp\htdocs\turnos-app-last\src\LCS\ServicioBundle\Entity</argument>
                       </argument>
                     </service>
                   </argument>
-                  <argument>LCS\AppBundle\Entity</argument>
+                  <argument>LCS\ServicioBundle\Entity</argument>
                 </call>
               </service>
             </argument>
           </call>
           <call method="setProxyDir">
-            <argument>C:\xampp\htdocs\turnos-app\app\cache\test/doctrine/orm/Proxies</argument>
+            <argument>C:\xampp\htdocs\turnos-app-last\app\cache\test/doctrine/orm/Proxies</argument>
           </call>
           <call method="setProxyNamespace">
             <argument>Proxies</argument>
@@ -2585,7 +2585,7 @@
     <service id="fos_js_routing.extractor" class="FOS\JsRoutingBundle\Extractor\ExposedRoutesExtractor">
       <argument type="service" id="router"/>
       <argument type="collection"/>
-      <argument>C:\xampp\htdocs\turnos-app\app\cache\test</argument>
+      <argument>C:\xampp\htdocs\turnos-app-last\app\cache\test</argument>
       <argument type="collection">
         <argument key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</argument>
         <argument key="SecurityBundle">Symfony\Bundle\SecurityBundle\SecurityBundle</argument>
@@ -2634,7 +2634,7 @@
         <argument key="consultasapp@centrocristales.com">Consultas Centro Cristales</argument>
       </argument>
       <argument>consultasapp@centrocristales.com</argument>
-      <argument>C:\xampp\htdocs\turnos-app\app\cache\test/attachments/</argument>
+      <argument>C:\xampp\htdocs\turnos-app-last\app\cache\test/attachments/</argument>
     </service>
     <service id="lcs_servicio.service.pedidopresupuesto" class="LCS\ServicioBundle\Service\PedidoPresupuestoService">
       <argument type="service" id="swiftmailer.mailer.default"/>
@@ -2643,11 +2643,12 @@
         <argument key="consultasapp@centrocristales.com">Consultas Centro Cristales</argument>
       </argument>
       <argument>consultasapp@centrocristales.com</argument>
-      <argument>C:\xampp\htdocs\turnos-app\app\cache\test/attachments/</argument>
+      <argument>C:\xampp\htdocs\turnos-app-last\app\cache\test/attachments/</argument>
     </service>
     <service id="lcs_servicio.service.consultaordentrabajo" class="LCS\ServicioBundle\Service\ConsultaOrdenTrabajoService">
       <argument type="service" id="guzzle.client.ws_crm_rest"/>
     </service>
+    <service id="lcs_servicio.service.consultabanner" class="LCS\ServicioBundle\Service\ConsultaBannerService"/>
     <service id="guzzle_bundle.formatter" class="GuzzleHttp\MessageFormatter"/>
     <service id="guzzle_bundle.logger" class="EightPoints\Bundle\GuzzleBundle\Log\Logger"/>
     <service id="guzzle_bundle.middleware.log.ws_crm_rest" class="EightPoints\Bundle\GuzzleBundle\Middleware\LogMiddleware">
@@ -2802,7 +2803,7 @@
       <argument>true</argument>
     </service>
     <service id="sensio_distribution.webconfigurator" class="Sensio\Bundle\DistributionBundle\Configurator\Configurator">
-      <argument>C:\xampp\htdocs\turnos-app\app</argument>
+      <argument>C:\xampp\htdocs\turnos-app-last\app</argument>
       <call method="addStep">
         <argument type="service">
           <service class="Sensio\Bundle\DistributionBundle\Configurator\Step\DoctrineStep" public="false">
@@ -2987,7 +2988,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.filesystem" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage">
-      <argument>C:\xampp\htdocs\turnos-app\app\cache\test/sessions</argument>
+      <argument>C:\xampp\htdocs\turnos-app-last\app\cache\test/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service" id="session.storage.metadata_bag"/>
     </service>
@@ -3002,9 +3003,9 @@
     <service id="router" class="Symfony\Bundle\FrameworkBundle\Routing\Router">
       <tag name="monolog.logger" channel="router"/>
       <argument type="service" id="service_container"/>
-      <argument>C:\xampp\htdocs\turnos-app\app/config/routing_dev.yml</argument>
+      <argument>C:\xampp\htdocs\turnos-app-last\app/config/routing_dev.yml</argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\xampp\htdocs\turnos-app\app\cache\test</argument>
+        <argument key="cache_dir">C:\xampp\htdocs\turnos-app-last\app\cache\test</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
         <argument key="generator_base_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
@@ -3023,7 +3024,7 @@
       <argument type="service">
         <service class="Doctrine\Common\Annotations\AnnotationReader" public="false"/>
       </argument>
-      <argument>C:\xampp\htdocs\turnos-app\app\cache\test/annotations</argument>
+      <argument>C:\xampp\htdocs\turnos-app-last\app\cache\test/annotations</argument>
       <argument>true</argument>
     </service>
     <service id="security.encoder_factory" class="Symfony\Component\Security\Core\Encoder\EncoderFactory">
@@ -3037,54 +3038,58 @@
       <argument type="service" id="templating.locator"/>
       <argument type="service" id="templating.name_parser"/>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\turnos-app\vendor\symfony\symfony\src\Symfony\Bundle\FrameworkBundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\turnos-app-last\vendor\symfony\symfony\src\Symfony\Bundle\FrameworkBundle/Resources/views</argument>
         <argument>Framework</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\turnos-app\vendor\symfony\symfony\src\Symfony\Bundle\SecurityBundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\turnos-app-last\vendor\symfony\symfony\src\Symfony\Bundle\SecurityBundle/Resources/views</argument>
         <argument>Security</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\turnos-app\vendor\symfony\symfony\src\Symfony\Bundle\TwigBundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\turnos-app-last\vendor\symfony\symfony\src\Symfony\Bundle\TwigBundle/Resources/views</argument>
         <argument>Twig</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\turnos-app\vendor\symfony\swiftmailer-bundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\turnos-app-last\vendor\symfony\swiftmailer-bundle/Resources/views</argument>
         <argument>Swiftmailer</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\turnos-app\vendor\doctrine\doctrine-bundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\turnos-app-last\vendor\doctrine\doctrine-bundle/Resources/views</argument>
         <argument>Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\turnos-app\src\LCS\WebServiceBundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\turnos-app-last\src\LCS\WebServiceBundle/Resources/views</argument>
         <argument>LCSWebService</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\turnos-app\vendor\eightpoints\guzzle-bundle\EightPoints\Bundle\GuzzleBundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\turnos-app-last\src\LCS\ServicioBundle/Resources/views</argument>
+        <argument>LCSServicio</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\xampp\htdocs\turnos-app-last\vendor\eightpoints\guzzle-bundle\EightPoints\Bundle\GuzzleBundle/Resources/views</argument>
         <argument>Guzzle</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\turnos-app\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\turnos-app-last\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
         <argument>Debug</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\turnos-app\vendor\symfony\symfony\src\Symfony\Bundle\WebProfilerBundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\turnos-app-last\vendor\symfony\symfony\src\Symfony\Bundle\WebProfilerBundle/Resources/views</argument>
         <argument>WebProfiler</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\turnos-app\vendor\sensio\distribution-bundle\Sensio\Bundle\DistributionBundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\turnos-app-last\vendor\sensio\distribution-bundle\Sensio\Bundle\DistributionBundle/Resources/views</argument>
         <argument>SensioDistribution</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\turnos-app\src\LCS\AppBundle/Resources/views</argument>
+        <argument>C:\xampp\htdocs\turnos-app-last\src\LCS\AppBundle/Resources/views</argument>
         <argument>LCSApp</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\turnos-app\app/Resources/views</argument>
+        <argument>C:\xampp\htdocs\turnos-app-last\app/Resources/views</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\turnos-app\vendor\symfony\symfony\src\Symfony\Bridge\Twig/Resources/views/Form</argument>
+        <argument>C:\xampp\htdocs\turnos-app-last\vendor\symfony\symfony\src\Symfony\Bridge\Twig/Resources/views/Form</argument>
       </call>
     </service>
     <service id="logger" class="Symfony\Bridge\Monolog\Logger">
@@ -3113,7 +3118,7 @@
       </call>
     </service>
     <service id="swiftmailer.mailer.default.spool" class="Swift_FileSpool">
-      <argument>C:\xampp\htdocs\turnos-app\app/spool/default</argument>
+      <argument>C:\xampp\htdocs\turnos-app-last\app/spool/default</argument>
     </service>
     <service id="swiftmailer.mailer.default.transport.real" class="Swift_Transport_NullTransport">
       <argument type="service" id="swiftmailer.mailer.default.transport.eventdispatcher"/>

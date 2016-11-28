@@ -37,30 +37,27 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                 return array (  '_controller' => 'LCS\\WebServiceBundle\\Controller\\V1Controller::indexAction',  '_route' => 'lcs_webservice_v1_index',);
             }
 
-            if (0 === strpos($pathinfo, '/ws/v1/sendpedidopresupuesto')) {
-                // lcs_webservice_v1_sendpedidopresupuesto
-                if ($pathinfo === '/ws/v1/sendpedidopresupuesto') {
-                    if ($this->context->getMethod() != 'POST') {
-                        $allow[] = 'POST';
-                        goto not_lcs_webservice_v1_sendpedidopresupuesto;
-                    }
-
-                    return array (  '_controller' => 'LCS\\WebServiceBundle\\Controller\\V1Controller::sendPedidoPresupuesto',  '_route' => 'lcs_webservice_v1_sendpedidopresupuesto',);
+            // lcs_webservice_v1_sendpedidopresupuesto
+            if ($pathinfo === '/ws/v1/sendpedidopresupuesto') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_lcs_webservice_v1_sendpedidopresupuesto;
                 }
-                not_lcs_webservice_v1_sendpedidopresupuesto:
 
-                // lcs_webservice_v1_sendpedidopresupuestotest
-                if ($pathinfo === '/ws/v1/sendpedidopresupuestotest') {
-                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                        $allow = array_merge($allow, array('GET', 'HEAD'));
-                        goto not_lcs_webservice_v1_sendpedidopresupuestotest;
-                    }
-
-                    return array (  '_controller' => 'LCS\\WebServiceBundle\\Controller\\V1Controller::sendPedidoPresupuestoTest',  '_route' => 'lcs_webservice_v1_sendpedidopresupuestotest',);
-                }
-                not_lcs_webservice_v1_sendpedidopresupuestotest:
-
+                return array (  '_controller' => 'LCS\\WebServiceBundle\\Controller\\V1Controller::sendPedidoPresupuesto',  '_route' => 'lcs_webservice_v1_sendpedidopresupuesto',);
             }
+            not_lcs_webservice_v1_sendpedidopresupuesto:
+
+            // lcs_webservice_v1_bannerimage
+            if ($pathinfo === '/ws/v1/bannerimage') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_lcs_webservice_v1_bannerimage;
+                }
+
+                return array (  '_controller' => 'LCS\\WebServiceBundle\\Controller\\V1Controller::bannerImage',  '_route' => 'lcs_webservice_v1_bannerimage',);
+            }
+            not_lcs_webservice_v1_bannerimage:
 
         }
 

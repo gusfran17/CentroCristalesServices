@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Banner
  *
  * @ORM\Table()
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="LCS\ServicioBundle\Entity\BannerRepository")
  */
 class Banner
 {
@@ -31,7 +31,7 @@ class Banner
     /**
      * @var string
      *
-     * @ORM\Column(name="fileName", type="string", length=200)
+     * @ORM\Column(name="file_name", type="string", length=250)
      */
     private $fileName;
 

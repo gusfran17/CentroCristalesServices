@@ -10,14 +10,7 @@ class DefaultControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', 'v1');
-
-        $this->assertTrue($crawler->filter('html:contains("Index")')->count() > 0);
-    }
-
-    public function testObeterBanner()
-    {
-     	   
+        $crawler = $client->request('GET', '/hello/Fabien');
 
         $this->assertTrue(true);
     }
