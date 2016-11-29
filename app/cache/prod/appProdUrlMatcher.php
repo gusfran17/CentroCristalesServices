@@ -59,6 +59,16 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             }
             not_lcs_webservice_v1_bannerimage:
 
+            // lcs_webservice_v1_bannerlink
+            if ($pathinfo === '/ws/v1/bannerlink') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_lcs_webservice_v1_bannerlink;
+                }
+
+                return array (  '_controller' => 'LCS\\WebServiceBundle\\Controller\\V1Controller::bannerLink',  '_route' => 'lcs_webservice_v1_bannerlink',);
+            }
+            not_lcs_webservice_v1_bannerlink:
         }
 
         // homepage

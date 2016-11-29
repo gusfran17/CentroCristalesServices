@@ -82,50 +82,41 @@ class V1Controller extends Controller
 
 		$em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('LCSServicioBundle:Banner')->findAll();
-
-  //       $normalizers = array(new GetSetMethodNormalizer());
-		// $encoders = array(new XmlEncoder(), new JsonEncoder());
-		// $serializer = new Serializer($normalizers, $encoders);
-
-		// $logger = $this->get('logger');
-  //   	$logger->info('Trying logger');
-    	//$logger->info(var_dump($entities));
+        $entity = $em->getRepository('LCSServicioBundle:Banner')->find(1);	
 		
-		$data = array();
-
-		$data['status'] = 100;
-		$data['mensaje'] = "Successful Call";
-		$data['id'] = $entities[0]->getId();
-		$data['link'] = $entities[0]->getLink();
-		$data['file_name'] = $entities[0]->getFileName();
-
-		//$data['file'] = $entities[0]->getFile();
-		//$object = $serializer->serialize($data, 'json');
-	
-		
-		$file = $entities[0]->getFile();
+		$file = $entity->getFile();
 
 		$response = new Response(stream_get_contents($file));
 
 		$disposition = $response->headers->makeDisposition(
 		    ResponseHeaderBag::DISPOSITION_ATTACHMENT,
-		    $entities[0]->getFileName()
+		    $entity->getFileName()
 		);
 
+		// set a HTTP response header
+		$response->headers->set('Content-Type', 'image/jpg');
 		$response->headers->set('Content-Disposition', $disposition);
 		
+		return $response;
+	}
 
+	/**
+	 * @Route("/bannerliink")
+	 * @param Request $request
+	 * @Method({"GET"})
+	 * @return JsonResponse
+	 */
+	public function bannerLink(Request $request){
 
-		// $response = new \Symfony\Component\HttpFoundation\Response(stream_get_contents($file), 200, array(
-		//     'Content-Type' => 'application/octet-stream',
-		//     'Content-Length' => sizeof($file),
-		//     'Content-Disposition' => 'attachment; filename="'.$entities[0]->getFileName().'"',
-		// ));
+		$em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('LCSServicioBundle:Banner')->find(1);	
+		
+		$link = $entity->getLink();
+
+		$response = new JsonResponse($link);
 
 		return $response;
-
-		//return new JsonResponse($data);
 	}
 
 }
